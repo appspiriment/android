@@ -24,7 +24,7 @@ Utils available:
  
 * #### Print Log     `printLog(message: Any?, tag: String = "LogTag: ", isError: Boolean = false)`
     This method is the implementation of Log.w method. This method helps your print the log in two levels - warning and error. The advantage of using this method is that this will print the log only in debug mode, and you don't need to take care of the data type in the message part.
-    ```java
+    ```
       function name : printLog
       arguments:
             message - You can give the message here. You can give any data type. 
@@ -43,7 +43,7 @@ Utils available:
 * #### Print Stacktrace     `fun printStacktrace(e: Exception)`
     This method is the implementation of error.printStacktrace. The advantage of using this method is that this will print the stack trace only in debug mode.
     
-    ```java
+    ```
       function name : printStacktrace
       arguments:
             error - any error which is a subclass of Android Exception
