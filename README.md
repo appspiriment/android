@@ -20,9 +20,9 @@ Utils available:
         
 
 ### LogUtils
-* This util class helps you print logs and stacktrace. This methods print the Log and Stacktrace only on DEBUG mode, hence avoids the requirement of clearing the Log statements on release.
-    #### Methods
-    ##### Print Log     `printLog(message: Any?, tag: String = "LogTag: ", isError: Boolean = false)`
+ This util class helps you print logs and stacktrace. This methods print the Log and Stacktrace only on DEBUG mode, hence avoids the requirement of clearing the Log statements on release.
+ 
+* #### Print Log     `printLog(message: Any?, tag: String = "LogTag: ", isError: Boolean = false)`
     This method is the implementation of Log.w method. This method helps your print the log in two levels - warning and error. The advantage of using this method is that this will print the log only in debug mode, and you don't need to take care of the data type in the message part.
     ```java
       function name : printLog
@@ -40,7 +40,7 @@ Utils available:
         LogUtils.printLog("LogMessage", "LogTag")
         LogUtils.printLog(message= "LogMessage", isError = true)
     ```
-    ##### Print Stacktrace     `fun printStacktrace(e: Exception)`
+* #### Print Stacktrace     `fun printStacktrace(e: Exception)`
     This method is the implementation of error.printStacktrace. The advantage of using this method is that this will print the stack trace only in debug mode.
     
     ```java
