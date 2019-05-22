@@ -12,14 +12,25 @@ Android Utils library is a simple library which helps developers to use some com
 * It brings a bunch of most commonly used methods into a single library, which helps you write clean ode, and avoid clutter. The methods are organized into different classess based on purpose. 
 * This library provides easier implementation of network/API access using a single entry method. This library implements [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md).
 
-Utils available:
-        * LogUtils
-        * NetworkUtils
-        * MessageUtils
-        * DeviceUtils
-        
+> ***This library is optimized for Kotlin. Java users have to call the methods accordingly***
 > ***Optional values can be skipped in Kotlin. In Java, you have to pass the default value***
 
+## How to use?
+   Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
+
+   ```gradle
+   implementation 'com.appspiriment.android:androidutils:{latest_version}'
+   ```
+
+# What is available?
+Utils available:
+  * [LogUtils](https://github.com/appspiriment/AndroidUtils#logutils)
+  * [MessageUtils](https://github.com/appspiriment/AndroidUtils#messageutils)
+  * [DeviceUtils](https://github.com/appspiriment/AndroidUtils#deviceutils)
+  * [NetworkUtils](https://github.com/appspiriment/AndroidUtils#networkutils)
+
+
+        
 #### LogUtils
  This util class helps you print logs and stacktrace. This methods print the Log and Stacktrace only on DEBUG mode, hence avoids the requirement of clearing the Log statements on release.
  
@@ -124,8 +135,11 @@ Utils available:
 
     ```java
         MessageUtils.showMsg(this, "Sample Title", "Sample Text")
+        MessageUtils.showMsg(this, title = "Sample Title", message = "Sample Text", positiveButton = "YES", negativeButton = "NO")
         MessageUtils.showMsg(this, "Sample Title", "Sample Text", "YES", "NO")
+
     ```
+    
 
 ### DeviceUtils
      This util provide methods related to the device and hardware.
@@ -151,7 +165,7 @@ Utils available:
     
  ### NetworkUtils
  
- This util provide methods related to the Network operations. The library makes use of [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
+ This util provide methods related to the Network operations. The library makes use of [Amit Shekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
  
  **This class needs to be initialized using context and could not be used in static context**. It is required for initialization of Android Networking Library, and to enable Dependecy Injection.
  
@@ -181,4 +195,42 @@ Utils available:
     ```
 
 
+ * #### ApiRequest `fun startApiRequest( url: String,  stringSuccessListenerLambda: (String) -> Unit = {}, jsonSuccessListenerLambda: (JSONObject) -> Unit = {}, jsonArraySuccessListenerLambda: (JSONArray) -> Unit = {}, errorListenLambda: (error: ANError) -> Unit = {}, requestType: Int = API_REQUEST_STRING, connectTimeOutInMillis: Long = 7000, readTimeOutInMillis: Long = 10000, writeTimeOutInMillis: Long = 10000)`
+ 
+      This method starts an asynchronous network call using Fast Android Network Library. You need to handle the result/error in the Success / Error listener. As you can see from the FAN library page, there are mainly three type of success listeners - String. Json and JSON Array objects. (Custom object listener is not implemented in this library). 
 
+**You need to pass the request type if the request is not a String request, else you won't get a result.**
+
+        function name : startApiRequest
+        arguments: 
+              url  - Url of the api to be called
+              stringSuccessListenerLambda - The lambda function to handle string request result. Will get result as string inside the lambda (You should pass this if request type is 'API_REQUEST_STRING' or default)
+              jsonSuccessListenerLambda - The lambda function to handle json request result. Will get result as JSON Object inside the lambda (You should pass this if request type is 'API_REQUEST_JSON')
+              jsonArraySuccessListenerLambda - The lambda function to handle json array request result. Will get result as JSON array  Object inside the lambda (You should pass this if request type is 'API_REQUEST_JSON_ARRAY')
+              errorListenLambda - You should pass an error listener lambda function to handle the error. You will get an error object of type ANError inside the labmda as parameter.
+              requestType = Should be one of API_REQUEST_STRING, API_REQUEST_JSON,  API_REQUEST_JSON_ARRAY. 
+              connectTimeOutInMillis - Connection timout in milliseconds [Optional]
+              readTimeOutInMillis - Read timout in milliseconds [Optional]
+              writeTimeOutInMillis - Write timout in milliseconds [Optional]
+## TODO
+* More Util functions
+* Java optimization
+
+## CREDITS
+[Amit Shekhar](https://github.com/amitshekhariitbhu) - As Fast Android Networking is developed by Amit.
+
+### Copyright (C) 2019 Appspiriment Labs
+
+       ```
+       Licensed under the Apache License, Version 2.0 (the "License");
+       you may not use this file except in compliance with the License.
+       You may obtain a copy of the License at
+       
+       http://www.apache.org/licenses/LICENSE-2.0
+       
+       Unless required by applicable law or agreed to in writing, software
+       distributed under the License is distributed on an "AS IS" BASIS,
+       WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+       See the License for the specific language governing permissions and
+       limitations under the License.
+       ```
