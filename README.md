@@ -54,7 +54,7 @@ Utils available:
         LogUtils.printStacktrace(error)
     ```
   
- ###DeviceUtils
+ ### DeviceUtils
      This util provide methods related to the device and hardware.
  
  * #### Hide Keyboard `fun hideKeyboard(activity: Activity)`
@@ -70,3 +70,29 @@ Utils available:
     ```java
         DeviceUtils.hideKeyboard(this)
     ```
+    
+ ### NetworkUtils
+     This util provide methods related to the Network operations. The library makes use of [!Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [!Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
+ 
+ **This class needs to be initialized using context and could not be used in static context**. It is required for initialization of Android Networking Library, and to enable Dependecy Injection.
+ 
+ * #### Check Network Connection `fun isNetworkConnected() : Boolean`
+        This method helps to access the network state. This will check if the device have network connection by mobile network or WiFi. It will not tell you whether internet is available, but only whether the network is connected.
+     
+     ```
+        function name : isNetworkConnected
+        arguments: None
+        return: Boolean - true or false based on the avilability of network connection
+     ```
+    Sample Usage in Kotlin:
+
+    ```java
+        Java :
+                NetworkUtils networkUtils = new NetworkUtils(this);
+                boolean networkAvailable = networkUtils.isNetworkConnected();
+        Kotlin:
+                val isNetworkAvailable = NetworkUtils(this).isNetworkConnected()
+    ```
+
+
+
