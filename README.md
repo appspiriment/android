@@ -40,6 +40,13 @@ Utils available:
         LogUtils.printLog("LogMessage", "LogTag")
         LogUtils.printLog(message= "LogMessage", isError = true)
     ```
+    Sample Usage in Java:
+
+    ```java
+        LogUtils.Companion.printLog("Log Message")
+        LogUtils.Companion.printLog("LogMessage", "LogTag")
+        LogUtils.Companion.printLog(message= "LogMessage", isError = true)
+    ```
 * #### Print Stacktrace     `fun printStacktrace(e: Exception)`
     This method is the implementation of error.printStacktrace. The advantage of using this method is that this will print the stack trace only in debug mode.
     
@@ -53,7 +60,40 @@ Utils available:
     ```java
         LogUtils.printStacktrace(error)
     ```
-  
+    
+    Sample Usage in java:
+
+    ```java
+        LogUtils.Companion.printStacktrace(error)
+    ```
+ 
+  ### MessageUtils
+     This util provide methods to display messages to the user - AlertDialogs and Toasts.
+ 
+ * #### Show Toast `fun showToast(context: Context, message: String, isLong: Boolean = false) `
+        This method helps to hide the softkeyboard manually. 
+     
+     ```
+        function name : showToast
+        arguments:
+                context - Context
+                message - Message to be displayed
+                isLong  - Whether the toast to be displayed Long or Short (Duration) 
+     ```
+    Sample Usage in Kotlin:
+
+    ```java
+        MessageUtils.showToast(this, "Sample Text")
+        MessageUtils.showToast(this, "Sample Text", true)
+    ```
+    
+    Sample Usage in java:
+
+    ```java
+        MessageUtils.Companion.showToast(this, "Sample Text", false)
+        MessageUtils.Companion.showToast(this, "Sample Text", true)
+    ```
+    
  ### DeviceUtils
      This util provide methods related to the device and hardware.
  
@@ -70,11 +110,23 @@ Utils available:
     ```java
         DeviceUtils.hideKeyboard(this)
     ```
+     Sample Usage in java:
+
+    ```java
+        DeviceUtils.Companion.hideKeyboard(this)
+    ```
     
  ### NetworkUtils
      This util provide methods related to the Network operations. The library makes use of [!Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [!Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
  
  **This class needs to be initialized using context and could not be used in static context**. It is required for initialization of Android Networking Library, and to enable Dependecy Injection.
+ 
+ * #### Constants: 
+    ```java
+    val API_REQUEST_STRING = 101
+    val API_REQUEST_JSON = 102
+    val API_REQUEST_JSON_ARRAY = 103
+    ```
  
  * #### Check Network Connection `fun isNetworkConnected() : Boolean`
         This method helps to access the network state. This will check if the device have network connection by mobile network or WiFi. It will not tell you whether internet is available, but only whether the network is connected.
@@ -84,7 +136,7 @@ Utils available:
         arguments: None
         return: Boolean - true or false based on the avilability of network connection
      ```
-    Sample Usage in Kotlin:
+    Sample Usage:
 
     ```java
         Java :
