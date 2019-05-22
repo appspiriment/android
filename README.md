@@ -10,16 +10,17 @@ Android Utils library is a simple library which helps developers to use some com
 
 ## Why use Android Utils Library?
 * It brings a bunch of most commonly used methods into a single library, which helps you write clean ode, and avoid clutter. The methods are organized into different classess based on purpose. 
-* This library provides easier implementation of network/API access using a single entry method. This library implements [!Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md).
+* This library provides easier implementation of network/API access using a single entry method. This library implements [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md).
 
 Utils available:
-        1. LogUtils
-        1. NetworkUtils
-        1. MessageUtils
-        1. DeviceUtils
+        * LogUtils
+        * NetworkUtils
+        * MessageUtils
+        * DeviceUtils
         
+> ***Optional values can be skipped in Kotlin. In Java, you have to pass the default value***
 
-### LogUtils
+#### LogUtils
  This util class helps you print logs and stacktrace. This methods print the Log and Stacktrace only on DEBUG mode, hence avoids the requirement of clearing the Log statements on release.
  
 * #### Print Log     `printLog(message: Any?, tag: String = "LogTag: ", isError: Boolean = false)`
@@ -94,7 +95,39 @@ Utils available:
         MessageUtils.Companion.showToast(this, "Sample Text", true)
     ```
     
- ### DeviceUtils
+* #### Show Message Dialog `showMsgDialog( activityThis: Activity, title: String? = null, message: String? = null, titleRes: Int = -1, messageRes: Int = -1, viewRes: Int = -1, view: View? = null, positiveButton: String = "OK", negativeButton: String? = null, neutralButton: String? = null, finishActivityOnOk: Boolean = false, finishActivityOnCancel: Boolean = false, isCancellable: Boolean = false, onClickListen: (Int) -> Unit = { }, onCancelListen: () -> Unit = {}, iconRes: Int = R.mipmap.ic_launcher)`
+        
+    This method is a util method to display an Alert Dialog. This is a highly customizable method, in which different combinations are possible.
+     
+     ```
+        function name : showMsgDialog
+        arguments:
+                activityThis - Activity reference of which the Alert dialog to be displayed
+                title - Title String of the Dialog [Optional]
+                titleRes - Resource Id of the String value for the title of Dialog. Either this or `title` could be used [Optional]
+                message  - Message String of the Dialog [Optional]
+                messageRes - Resource Id of the String value for the message of  Dialog. Either this or `message` could be used [Optional]
+                viewRes - Resource id for the custom view for the dialog [Optional]
+                view - View object for the custom view for the dialog [Optional]
+                positiveButton - Text for the Positive Button  [Optional - will display 'OK' if not given]
+                negativeButton - Text for the Negative Button  [Optional - will hide negative button if not given]
+                neutralButton - Text for the Neutral Button  [Optional - will hide neutral button if not given]
+                finishActivityOnOk - if this is true, the activity will be finished on click of Positive Button [Optional]
+                finishActivityOnCancel - if this is true, the activity will be finished on cancelling the dialog box [Optional]
+                isCancellable - Whether the dialog is cancellable or not [Optional]
+                onClickListen - Labmda function to handle the onclick. The button id will be passed as a labda parameter, and could be managed inside the lambda. [Optional - will close the dialog if not given]
+                onCancelListen - Labmda function to handle the onCancel event. [Optional]
+                iconRes - Resource id for Dialog Icon
+
+     ```
+    Sample Usage in Kotlin:
+
+    ```java
+        MessageUtils.showMsg(this, "Sample Title", "Sample Text")
+        MessageUtils.showMsg(this, "Sample Title", "Sample Text", "YES", "NO")
+    ```
+
+### DeviceUtils
      This util provide methods related to the device and hardware.
  
  * #### Hide Keyboard `fun hideKeyboard(activity: Activity)`
@@ -117,7 +150,8 @@ Utils available:
     ```
     
  ### NetworkUtils
-     This util provide methods related to the Network operations. The library makes use of [!Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [!Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
+ 
+ This util provide methods related to the Network operations. The library makes use of [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking) since it take care of several issues with Volley, and is easier to setup than retrofit. Powerful enough to handle most of the use-cases. Read more on Amit's [Github](https://github.com/amitshekhariitbhu/Fast-Android-Networking).
  
  **This class needs to be initialized using context and could not be used in static context**. It is required for initialization of Android Networking Library, and to enable Dependecy Injection.
  
