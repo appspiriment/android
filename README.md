@@ -24,7 +24,7 @@ Latest Version `0.2.0`
    implementation 'com.appspiriment.android:androidutils:{latest_version}'
    ```
 
-# What is available?
+## What is available?
 Utils available:
   * [LogUtils](https://github.com/appspiriment/AndroidUtils#logutils)
   * [MessageUtils](https://github.com/appspiriment/AndroidUtils#messageutils)
