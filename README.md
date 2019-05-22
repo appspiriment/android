@@ -18,6 +18,8 @@ Android Utils library is a simple library which helps developers to use some com
 ## How to use?
    Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
 
+Latest Version `0.2.0`
+
    ```gradle
    implementation 'com.appspiriment.android:androidutils:{latest_version}'
    ```
