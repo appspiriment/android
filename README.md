@@ -1,6 +1,6 @@
 # Android Utils Library
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
-[ ![Download](https://api.bintray.com/packages/appspiriment/android/androidutils/images/download.svg?version=0.2.0) ](https://bintray.com/appspiriment/android/androidutils/0.2.0/link)
+[ ![Download](https://api.bintray.com/packages/appspiriment/android/androidutils/images/download.svg?version=0.2.1) ](https://bintray.com/appspiriment/android/androidutils/0.2.1/link)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/appspiriment/AndroidUtils/blob/master/LICENSE)
 
@@ -18,7 +18,7 @@ Android Utils library is a simple library which helps developers to use some com
 ## How to use?
    Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
 
-Latest Version `0.2.0`
+Latest Version `0.2.1`
 
    ```gradle
    implementation 'com.appspiriment.android:androidutils:{latest_version}'
