@@ -6,6 +6,7 @@ import android.content.DialogInterface
 import android.os.Build
 import android.text.Html
 import android.view.View
+import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
@@ -20,14 +21,13 @@ object UiUtils {
      * ****************************************
      */
     fun Context.showToast(
-        context: Context,
         message: String? = null,
         isLong: Boolean = false,
         messageRes: Int = -1
     ) {
         Toast.makeText(
-            context,
-            if (messageRes != -1) context.getString(messageRes) else message ?: "Unkown error!",
+            this,
+            if (messageRes != -1) this.getString(messageRes) else message ?: "Unkown error!",
             if (isLong) Toast.LENGTH_LONG else Toast.LENGTH_SHORT
         ).show()
     }
@@ -111,6 +111,22 @@ object UiUtils {
         }.create().show()
     }
 
+    /**
+     * **************************************
+     * Method to hide Soft Keyboard
+     * ****************************************
+     */
+    fun Activity.hideKeyboard() {
+        try {
+            val imm = this.getSystemService(Activity.INPUT_METHOD_SERVICE) as InputMethodManager
+            var view = this.currentFocus
+            if (view == null) {
+                view = View(this)
+            }
+            imm.hideSoftInputFromWindow(view.windowToken, 0)
+        } catch (e: Exception) {
+        }
+    }
 
 }
 
