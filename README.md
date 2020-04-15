@@ -1,4 +1,4 @@
-# Android Utils & Baseclassed Library
+# Android Utils & Baseclasses Library
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [ ![Download](https://api.bintray.com/packages/appspiriment/android/AndroidUtils/images/download.svg?version=0.1.3) ](https://bintray.com/appspiriment/android/AndroidUtils/0.1.3/link)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
