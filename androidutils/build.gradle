@@ -55,7 +55,7 @@ ext {
     siteUrl = 'https://github.com/appspiriment/AndroidUtils'
     gitUrl = 'https://github.com/appspiriment/AndroidUtils.git'
 
-    libraryVersion = '0.1.1'
+    libraryVersion = '0.1.3'
 
     developerId = 'appspiriment'
     developerName = 'Appspiriment Labs'
