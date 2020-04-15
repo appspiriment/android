@@ -1,0 +1,69 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+android {
+    compileSdkVersion 29
+
+
+    defaultConfig {
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.core:core-ktx:1.2.0'
+
+    implementation 'com.amitshekhar.android:android-networking:1.0.2'
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    excludes = ['**/*.kt']
+}
+
+ext {
+    bintrayRepo = 'android'
+    bintrayName = 'AndroidUtils'
+
+    publishedGroupId = 'com.appspiriment.android'
+    libraryName = 'AndroidUtils'
+    artifact = 'androidutils'
+
+    libraryDescription = 'Android Utils is a collection of classes providing the basic functions which makes the programming easier.'
+
+    siteUrl = 'https://github.com/appspiriment/AndroidUtils'
+    gitUrl = 'https://github.com/appspiriment/AndroidUtils.git'
+
+    libraryVersion = '0.1.1'
+
+    developerId = 'appspiriment'
+    developerName = 'Appspiriment Labs'
+    developerEmail = 'appspiriment@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: 'bintray.gradle'
