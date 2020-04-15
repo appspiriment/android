@@ -1,4 +1,4 @@
-# Android Utils & Baseclassed Library
+# Android Utils & Baseclasses Library
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
 [ ![Download](https://api.bintray.com/packages/appspiriment/android/AndroidUtils/images/download.svg?version=0.1.3) ](https://bintray.com/appspiriment/android/AndroidUtils/0.1.3/link)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
@@ -6,9 +6,12 @@
 
 ## About Android Utils & Baseclasses Library
 
+> ***This library is optimized for Kotlin. Java users will be unable to use some methods***
+> ***Optional values can be skipped in Kotlin. In Java, you have to pass the default value***
+
 This library has two main components: 
 * [Android Utils](https://github.com/appspiriment/AndroidUtils#AndroidUtils)
-* Baseclasses
+* Baseclasses [Yet to be implemented]
 
 # AndroidUtils
 Android Utils library is a set of commonly used functions which is intented to make coding easier. It utilizes the concept of Extension functions from Kotlin.
@@ -16,9 +19,6 @@ Android Utils library is a set of commonly used functions which is intented to m
 ## Why use Android Utils Library?
 * It brings a bunch of most commonly used methods into a single library, which helps you write clean code, and avoid clutter. The methods are organized into different classess based on purpose. 
 * This library provides easier implementation of network/API access using a single entry method. This library implements [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md).
-
-> ***This library is optimized for Kotlin. Java users have to call the methods accordingly***
-> ***Optional values can be skipped in Kotlin. In Java, you have to pass the default value***
 
 ## How to use?
    Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
