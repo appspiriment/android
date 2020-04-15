@@ -9,6 +9,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.Observer
+import com.appspiriment.androidutils.UiUtils.showMsgDialog
 import com.appspiriment.baseclasses.utils.BaseViewStates
 import com.google.android.gms.ads.AdSize
 import org.koin.android.viewmodel.ext.android.viewModelByClass
@@ -124,8 +125,8 @@ abstract class BaseActivity<
      * Show Exit Confirmation
      ***************************************/
     open fun showConfirmFinishActivityDialog() {
-        MessageUtils.showMsgDialog(
-            this, getString(R.string.app_name),
+        showMsgDialog(
+            getString(R.string.app_name),
             "Are you sure want to exit from this application?",
             positiveButton = "EXIT", negativeButton = "CANCEL",
             finishActivityOnOk = true

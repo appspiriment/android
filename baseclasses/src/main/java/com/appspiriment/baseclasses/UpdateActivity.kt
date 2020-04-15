@@ -2,6 +2,7 @@ package com.appspiriment.baseclasses
 
 import android.content.Intent
 import androidx.databinding.ViewDataBinding
+import com.appspiriment.androidutils.UiUtils.showMsgDialog
 import com.appspiriment.baseclasses.utils.UpdateConstants.REQ_CODE_IMMD_UPDATE
 import com.appspiriment.baseclasses.utils.UpdateConstants.REQ_CODE_FLEXI_UPDATE
 import com.google.android.play.core.appupdate.AppUpdateManagerFactory
@@ -68,7 +69,7 @@ abstract class UpdateActivity<
                 RESULT_OK -> {
                 }
                 RESULT_CANCELED -> {
-                    MessageUtils.showMsgDialog(this, "Update Required",
+                    showMsgDialog("Update Required",
                         "The app requires an update to function. Please update the app from playstore!",
                         positiveButton = "OK",
                         positiveClickListen = { finish() })

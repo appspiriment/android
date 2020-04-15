@@ -1,6 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'com.github.dcendents.android-maven'
+apply plugin: 'com.jfrog.bintray'
+
 android {
     compileSdkVersion 29
     dataBinding {
@@ -37,4 +40,40 @@ dependencies {
     implementation 'com.google.firebase:firebase-ads:19.0.1'
     implementation "androidx.navigation:navigation-fragment-ktx:$navigation_version"
     implementation "androidx.navigation:navigation-ui-ktx:$navigation_version"
+
+    implementation 'com.appspiriment.android:androidutils:0.1.3'
 }
+
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    options.addStringOption('encoding', 'UTF-8')
+    excludes = ['**/*.kt']
+}
+
+ext {
+    bintrayRepo = 'android'
+    bintrayName = 'BaseClasses'
+
+    publishedGroupId = 'com.appspiriment.android'
+    libraryName = 'BaseClasses'
+    artifact = 'baseclasses'
+
+    libraryDescription = 'Baseclasses is a collection of Base Classes to reduce the boilerplate code.'
+
+    siteUrl = 'https://github.com/appspiriment/AndroidUtils'
+    gitUrl = 'https://github.com/appspiriment/AndroidUtils.git'
+
+    libraryVersion = "$library_version"
+
+    developerId = 'appspiriment'
+    developerName = 'Appspiriment Labs'
+    developerEmail = 'appspiriment@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+apply from: '../bintray.gradle'
+

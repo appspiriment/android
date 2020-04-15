@@ -4,12 +4,14 @@ buildscript {
     ext.kotlin_version = '1.3.70'
     ext.koin_version = "1.0.2"
     ext.navigation_version = "2.2.1"
+    ext.library_version = "0.1.3"
 
     repositories {
         google()
         jcenter()
 
     }
+
     dependencies {
         classpath 'com.android.tools.build:gradle:3.5.2'
         classpath 'com.google.gms:google-services:4.3.3'
@@ -39,3 +41,4 @@ allprojects {
 task clean(type: Delete) {
     delete rootProject.buildDir
 }
+
