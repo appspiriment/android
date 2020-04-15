@@ -1,15 +1,20 @@
-# Android Utils Library
+# Android Utils & Baseclassed Library
 [![API](https://img.shields.io/badge/API-9%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=21)
-[ ![Download](https://api.bintray.com/packages/appspiriment/android/androidutils/images/download.svg?version=0.1.0) ](https://bintray.com/appspiriment/android/androidutils/0.1.0/link)
+[ ![Download](https://api.bintray.com/packages/appspiriment/android/AndroidUtils/images/download.svg?version=0.1.3) ](https://bintray.com/appspiriment/android/AndroidUtils/0.1.3/link)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/appspiriment/AndroidUtils/blob/master/LICENSE)
 
-## About Android Utils Library
+## About Android Utils & Baseclasses Library
 
-Android Utils library is a simple library which helps developers to use some commonly used methods easily. 
+This library has two main components: 
+* [Android Utils](https://github.com/appspiriment/AndroidUtils#AndroidUtils)
+* Baseclasses
+
+# AndroidUtils
+Android Utils library is a set of commonly used functions which is intented to make coding easier. It utilizes the concept of Extension functions from Kotlin.
 
 ## Why use Android Utils Library?
-* It brings a bunch of most commonly used methods into a single library, which helps you write clean ode, and avoid clutter. The methods are organized into different classess based on purpose. 
+* It brings a bunch of most commonly used methods into a single library, which helps you write clean code, and avoid clutter. The methods are organized into different classess based on purpose. 
 * This library provides easier implementation of network/API access using a single entry method. This library implements [Amit Sekhar's Fast Android Networking Library](https://github.com/amitshekhariitbhu/Fast-Android-Networking/blob/master/README.md).
 
 > ***This library is optimized for Kotlin. Java users have to call the methods accordingly***
@@ -27,7 +32,7 @@ Latest Version `0.1.0`
 ## What is available?
 Utils available:
   * [LogUtils](https://github.com/appspiriment/AndroidUtils#logutils)
-  * [MessageUtils](https://github.com/appspiriment/AndroidUtils#messageutils)
+  * [UiUtils](https://github.com/appspiriment/AndroidUtils#UiUtils)
   * [DeviceUtils](https://github.com/appspiriment/AndroidUtils#deviceutils)
   * [NetworkUtils](https://github.com/appspiriment/AndroidUtils#networkutils)
 
@@ -81,41 +86,37 @@ Utils available:
         LogUtils.Companion.printStacktrace(error)
     ```
  
-  ### MessageUtils
-     This util provide methods to display messages to the user - AlertDialogs and Toasts.
+  ### UiUtils
+     This util provide methods to display messages to the user - AlertDialogs and Toasts. These messages are created as extension functions so that you don't need to pass the context as a parameter. You can call it as a function of the context. Hence you cannot make use of these functions in Java.
  
- * #### Show Toast `fun showToast(context: Context, message: String, isLong: Boolean = false) `
+ * #### Show Toast `fun Context.showToast(message: String, isLong: Boolean = false) `
         This method helps to hide the softkeyboard manually. 
      
      ```
         function name : showToast
         arguments:
-                context - Context
                 message - Message to be displayed
                 isLong  - Whether the toast to be displayed Long or Short (Duration) 
      ```
     Sample Usage in Kotlin:
 
     ```java
-        MessageUtils.showToast(this, "Sample Text")
-        MessageUtils.showToast(this, "Sample Text", true)
+        requireContext().showToast(this, "Sample Text") 
     ```
+    or
     
-    Sample Usage in java:
-
     ```java
-        MessageUtils.Companion.showToast(this, "Sample Text", false)
-        MessageUtils.Companion.showToast(this, "Sample Text", true)
+        context.showToast(this, "Sample Text") 
     ```
     
-* #### Show Message Dialog `showMsgDialog( activityThis: Activity, title: String? = null, message: String? = null, titleRes: Int = -1, messageRes: Int = -1, viewRes: Int = -1, view: View? = null, positiveButton: String = "OK", negativeButton: String? = null, neutralButton: String? = null, finishActivityOnOk: Boolean = false, finishActivityOnCancel: Boolean = false, isCancellable: Boolean = false, onClickListen: (Int) -> Unit = { }, onCancelListen: () -> Unit = {}, iconRes: Int = R.mipmap.ic_launcher)`
+    
+* #### Show Message Dialog `Activity.showMsgDialog(  title: String? = null, message: String? = null, titleRes: Int = -1,        messageRes: Int = -1, viewRes: Int = -1, view: View? = null, positiveButton: String = "OK", negativeButton: String? = null, neutralButton: String? = null, finishActivityOnOk: Boolean = false, finishActivityAffinity: Boolean = false, finishActivityOnCancel: Boolean = false, isCancellable: Boolean = false, positiveClickListen: () -> Unit = {}, negativeClickListen: () -> Unit = {}, neutralClickListen: () -> Unit = {}, onCancelListen: () -> Unit = {}, iconRes: Int = R.mipmap.ic_launcher, isHtmlMessage: Boolean = false)`
         
     This method is a util method to display an Alert Dialog. This is a highly customizable method, in which different combinations are possible.
      
      ```
         function name : showMsgDialog
         arguments:
-                activityThis - Activity reference of which the Alert dialog to be displayed
                 title - Title String of the Dialog [Optional]
                 titleRes - Resource Id of the String value for the title of Dialog. Either this or `title` could be used [Optional]
                 message  - Message String of the Dialog [Optional]
@@ -128,36 +129,34 @@ Utils available:
                 finishActivityOnOk - if this is true, the activity will be finished on click of Positive Button [Optional]
                 finishActivityOnCancel - if this is true, the activity will be finished on cancelling the dialog box [Optional]
                 isCancellable - Whether the dialog is cancellable or not [Optional]
-                onClickListen - Labmda function to handle the onclick. The button id will be passed as a labda parameter, and could be managed inside the lambda. [Optional - will close the dialog if not given]
+                positiveClickListen - Labmda function to handle the onclick event of Positive button.
+                negativeClickListen - Labmda function to handle the onclick event of Negative button.
+                neutralClickListen - Labmda function to handle the onclick event of Neutral button.
                 onCancelListen - Labmda function to handle the onCancel event. [Optional]
                 iconRes - Resource id for Dialog Icon
+                isHtmlMessage - If true, the message will be treated as an HTML string.
 
      ```
     Sample Usage in Kotlin:
 
     ```java
-        MessageUtils.showMsg(this, "Sample Title", "Sample Text")
-        MessageUtils.showMsg(this, title = "Sample Title", message = "Sample Text", positiveButton = "YES", negativeButton = "NO")
-        MessageUtils.showMsg(this, "Sample Title", "Sample Text", "YES", "NO")
+        requireActivity().showMsg(this, "Sample Title", "Sample Text")
+        activityObject.showMsg(this, title = "Sample Title", message = "Sample Text", positiveButton = "YES", negativeButton = "NO")
+        this@MainActivity.showMsg(this, "Sample Title", "Sample Text", "YES", "NO")
 
     ```
-    
-
-### DeviceUtils
-     This util provide methods related to the device and hardware.
- 
- * #### Hide Keyboard `fun hideKeyboard(activity: Activity)`
+     
+ * #### Hide Keyboard `fun Activity.hideKeyboard()`
         This method helps to hide the softkeyboard manually. 
      
      ```
-        function name : printStacktrace
-        arguments:
-                activity - Instance of the activity in which the keyboard to be hidden
+        function name : hideKeyboard
      ```
     Sample Usage in Kotlin:
 
     ```java
-        DeviceUtils.hideKeyboard(this)
+        requireActivity().hideKeyboard()
+        this@MainActivity.hideKeyboard()
     ```
      Sample Usage in java:
 
