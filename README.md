@@ -6,6 +6,8 @@
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
 
+Latest Version `0.1.4`
+
 ## About Android Utils & Baseclasses Library
 
 > ***This library is optimized for Kotlin. Java users will be unable to use some methods***
@@ -13,7 +15,7 @@
 
 This library has two main components: 
 * [Android Utils](https://github.com/appspiriment/AndroidUtils#AndroidUtils)
-* Baseclasses [Yet to be implemented]
+* [Baseclasses] (https://github.com/appspiriment/AndroidUtils#BaseClasses)
 
 # AndroidUtils
 Android Utils library is a set of commonly used functions which is intented to make coding easier. It utilizes the concept of Extension functions from Kotlin.
@@ -24,8 +26,6 @@ Android Utils library is a set of commonly used functions which is intented to m
 
 ## How to use?
    Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
-
-Latest Version `0.1.0`
 
    ```gradle
    implementation 'com.appspiriment.android:androidutils:{latest_version}'
@@ -215,6 +215,30 @@ Utils available:
               connectTimeOutInMillis - Connection timout in milliseconds [Optional]
               readTimeOutInMillis - Read timout in milliseconds [Optional]
               writeTimeOutInMillis - Write timout in milliseconds [Optional]
+              
+
+
+# BaseClasses
+
+## What is this library?
+The BaseClasses library provides the user a set of base classes for Activity, Fragmet and ViewModel, which could be used to implement the MVVM Architecture easily. It reduces the clutter and boiler plate code. 
+
+> ***This library is optimized for Kotlin. Java users will be unable to use some methods***
+> ***This library uses Koin DI for dependency injection and ViewModel injection***
+
+## How to use?
+   Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
+   
+   ```gradle
+   implementation 'com.appspiriment.android:androidutils:{latest_version}'
+   ```
+## What is available?
+Baseclasses available:
+  * [BaseActivity](https://github.com/appspiriment/AndroidUtils#logutils)
+  * [BaseFragment](https://github.com/appspiriment/AndroidUtils#UiUtils)
+  * [BaseViewModel](https://github.com/appspiriment/AndroidUtils#deviceutils)
+  * [UpdateActivity](https://github.com/appspiriment/AndroidUtils#networkutils)
+  
 ## TODO
 * More Util functions
 * Java optimization
