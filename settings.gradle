@@ -1,2 +1,6 @@
+include ':baseclasses_ads'
+include ':networkutils'
+include ':networkutils'
+include ':permissionutils'
 include ':baseclasses', ':androidutils'
 rootProject.name='Utils'

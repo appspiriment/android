@@ -2,9 +2,15 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AndroidUtils-Utils.iml" filepath="$PROJECT_DIR$/.idea/modules/AndroidUtils-Utils.iml" group="Utils" />
       <module fileurl="file://$PROJECT_DIR$/Utils.iml" filepath="$PROJECT_DIR$/Utils.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/androidutils/Utils-androidutils.iml" filepath="$PROJECT_DIR$/.idea/modules/androidutils/Utils-androidutils.iml" group="Utils/androidutils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baseclasses/Utils-baseclasses.iml" filepath="$PROJECT_DIR$/.idea/modules/baseclasses/Utils-baseclasses.iml" group="Utils/baseclasses" />
       <module fileurl="file://$PROJECT_DIR$/androidutils/androidutils.iml" filepath="$PROJECT_DIR$/androidutils/androidutils.iml" />
       <module fileurl="file://$PROJECT_DIR$/baseclasses/baseclasses.iml" filepath="$PROJECT_DIR$/baseclasses/baseclasses.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/baseclasses_ads/baseclasses_ads.iml" filepath="$PROJECT_DIR$/.idea/modules/baseclasses_ads/baseclasses_ads.iml" group="Utils/baseclasses_ads" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/networkutils/networkutils.iml" filepath="$PROJECT_DIR$/.idea/modules/networkutils/networkutils.iml" group="Utils/networkutils" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/permissionutils/permissionutils.iml" filepath="$PROJECT_DIR$/.idea/modules/permissionutils/permissionutils.iml" group="Utils/permissionutils" />
     </modules>
   </component>
 </project>
