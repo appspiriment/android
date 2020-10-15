@@ -11,23 +11,16 @@ Latest Version `0.1.1.0`
 
 > This library is using AndroidX. If you are still using support library and haven't migrated to AndroidX then you cannot use this library.
 
-<br>
-
 ### About Permission Utils
 A lightweight Android library which wraps boilerplate code of runtime permission and allows you to request permissions aynchronously. This will help you avoiding overriding on `onRequestPermissionsResult` and help you implement your logic in a linear fashion. 
 
 > This library is optimized for Kotlin. Java users will be unable to use some methods. Optional values can be skipped in Kotlin. In Java, you have to pass the default value
 
 
-<br>
-
 ### Why use Permission Utils Library?
 * This library has several methods which helps you obtain permission results or pass the actions as callback. 
 * This library also provide a `PermissionListener` interface to handle permission results.
 * Functions implemented as Extention Functions for both AppCompatActivity and Fragment
-
-
-<br>
 
 ### How to use?
    Add the below line to your app level `build.gradle`. Replace `{latest_version}` with the latest version of the library.
@@ -35,8 +28,6 @@ A lightweight Android library which wraps boilerplate code of runtime permission
    ```gradle
    implementation 'com.appspiriment.android:permissionutils:{latest_version}'
 ```
-
-<br>
 
 ## What is available?
 

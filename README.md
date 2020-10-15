@@ -16,7 +16,7 @@ Latest Version `0.1.4`
 This library has two main components: 
 * [Android Utils](https://github.com/appspiriment/AndroidUtils#AndroidUtils)
 * [Baseclasses](https://github.com/appspiriment/AndroidUtils#BaseClasses)
-* [PermissionUtils](https://github.com/appspiriment/AndroidUtils/PermissionUtils.md)
+* [PermissionUtils](https://github.com/appspiriment/AndroidUtils/blob/master/PermissionUtils.md)
 
 # AndroidUtils
 Android Utils library is a set of commonly used functions which is intented to make coding easier. It utilizes the concept of Extension functions from Kotlin.
