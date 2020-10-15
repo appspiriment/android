@@ -6,7 +6,7 @@
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
 
-Latest Version `0.1.2`
+Latest Version `0.1.1`
 
 > This library is using AndroidX. If you are still using support library and haven't migrated to AndroidX then you cannot use this library.
 
