@@ -1,13 +1,12 @@
-# Android Utils & Baseclasses Library
+# Android Utils Library - Permission Utils
 [![API](https://img.shields.io/badge/API-17%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=17)
-[ ![Download](https://api.bintray.com/packages/appspiriment/android/AndroidUtils/images/download.svg?version=0.1.1.0) ](https://bintray.com/appspiriment/android/AndroidUtils/0.1.3/link)
+[ ![Download](https://api.bintray.com/packages/appspiriment/android/AndroidUtils/images/download.svg?version=0.1.1) ](https://bintray.com/appspiriment/android/AndroidUtils/0.1.1/link)
 [![Open Source Love](https://badges.frapsoft.com/os/v1/open-source.svg?v=102)](https://opensource.org/licenses/Apache-2.0)
 [![License](https://img.shields.io/badge/license-Apache%202.0-blue.svg)](https://github.com/appspiriment/AndroidUtils/blob/master/LICENSE)
 [![Awesome Kotlin Badge](https://kotlin.link/awesome-kotlin.svg)](https://github.com/KotlinBy/awesome-kotlin)
 
 
-Latest Version `0.1.1.0`
-# Permission Utils
+Latest Version `0.1.2`
 
 > This library is using AndroidX. If you are still using support library and haven't migrated to AndroidX then you cannot use this library.
 
